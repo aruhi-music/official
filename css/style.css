@@ -10,7 +10,7 @@
     margin-top: 100px;
 }
 h2 {
-    font-family: "Kaiti SC";
+    font-family: 'Cormorant Garamond', serif;
     font-size: 60px;
     /* position: relative; */
 }
@@ -25,14 +25,14 @@ p {
     position: relative;
 }
 .live-content {
-    margin-top: -870px;
+    margin-top: -865px;
 }
 .bg-grey-dis {
     height: 780px;
 }
 .disco-content {
-    margin-top: -820px;
-    padding-bottom: 24px;
+    margin-top: -815px;
+    padding-bottom: 32px;
 }
 a {
 	display: inline-block;
@@ -504,10 +504,10 @@ footer p {
         height: 760px;
     }
     .live-content {
-        margin-top: -826px;
+        margin-top: -823px;
     }
     .disco-content {
-        margin-top: -786px;
+        margin-top: -783px;
     }
     .profile {
         flex-direction: column;
