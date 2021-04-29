@@ -21,11 +21,15 @@ p {
 [class*="bg-grey"] {
     background-color: #F2F2F2;
     margin-top: 120px;
-    height: 730px;
+    /* height: 730px; */
+    height: 770px;
     position: relative;
 }
 .live-content {
-    margin-top: -865px;
+    margin-top: -905px;
+}
+.live-content dl {
+    height: 686px;
 }
 .bg-grey-dis {
     height: 780px;
