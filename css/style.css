@@ -47,6 +47,12 @@ a {
 a:hover {
     color: grey;
 }
+.live-url {
+    color: mediumturquoise;
+}
+.live-url:hover {
+    color: lightseagreen;
+}
 /* header部分 */
 .logo {
     width: 156px;
