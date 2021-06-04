@@ -176,6 +176,10 @@ dd {
     margin-top: 1rem;
     width: 100%;
 }
+.info_img {
+    margin-top: 1rem;
+    width: 50%;
+}
 /* プロフィール */
 .profile {
     display: flex;
@@ -213,7 +217,7 @@ dd {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .disco-content img {
-    width: 100%
+    width: 100%;
 }
 .disco-content p{
     font-family: "クレー";
