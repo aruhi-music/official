@@ -83,7 +83,7 @@ button {
 }
 .sns-nav {
     margin-top: 30px;
-    margin-left: 37%;
+    margin-left: 22%;
 }
 .main-nav {
     margin-top: 5px;
@@ -93,6 +93,10 @@ button {
     float: right;
     position: relative;
     display: inline;
+}
+.goods{
+    width: 2.7rem;
+    height: 2.7rem;
 }
 .main-nav li:after{
     content: "/";
@@ -581,7 +585,10 @@ footer p {
         font-size: 15px;
     }
     .footer-nav img{
-        width: 30px;
+        width: 2.7rem;
+    }
+    .goods{
+        width: 2.7rem;
     }
     footer p {
         font-size: 2vh;
