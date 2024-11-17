@@ -117,6 +117,7 @@ section {
     padding: 0 1%;
     background-color: rgb(1, 52, 79, 0.4);
     backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     mix-blend-mode: color-dodge;
     transition: all 0.3s ease-in-out;
     z-index: 10;
@@ -751,11 +752,11 @@ section {
         color: #ffffff;
         transform: rotate(90deg);
         @include sp {
-            width: 70px;
+            width: 74px;
             position: absolute;
-            bottom: -4px;
+            bottom: -8px;
             right: 0;
-            transform: translateX(16px) rotate(90deg);
+            transform: translateX(18px) rotate(90deg);
         }
     }
 }
