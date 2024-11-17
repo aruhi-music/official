@@ -116,7 +116,7 @@ section {
     height: 120px;
     padding: 0 1%;
     background-color: rgb(1, 52, 79, 0.4);
-    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     mix-blend-mode: color-dodge;
     transition: all 0.3s ease-in-out;
