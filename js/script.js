@@ -22,6 +22,23 @@ window.addEventListener('scroll', function() {
     } else {
       snsNav.classList.remove('visible');
     }
+
+    // スクロール量を取得
+    const scroll = window.scrollY;
+    // 画面の高さを取得
+    const windowHeight = window.innerHeight;
+    // すべての.boxを取得 → すべてのsectionを取得に変更
+    const sections = document.querySelectorAll('section');
+
+    sections.forEach(function(section) {
+      // sectionまでの高さを取得
+      const distanceToSection = section.offsetTop;
+      // 下記条件が成り立つときだけsectionにis-activeクラスを付与する
+      if(scroll + windowHeight > distanceToSection) {
+        section.classList.add('fade-in');
+      }
+    });
+
 });
 // モーダルの閉じるボタン位置調整
 function setCloseButtonLeft(closeButtonStyle) {
