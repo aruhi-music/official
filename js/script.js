@@ -1,8 +1,6 @@
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.page-header'); // 対象の要素のIDを指定
     const profile = document.getElementById('profile-section');
-    const footerNav = document.getElementById('footer-nav');
-    const snsNav = document.querySelector('.sns-nav'); // 対象の要素のIDを指定
   
     if (window.pageYOffset === 0) {
       header.classList.add('no-scroll'); // クラスを追加
@@ -13,14 +11,6 @@ window.addEventListener('scroll', function() {
       header.classList.add('mixBlendMode-off');
     } else {
       header.classList.remove('mixBlendMode-off');
-    }
-    if (window.scrollY + window.innerHeight >= footerNav.offsetTop) {
-      snsNav.classList.add('visible');
-      // console.log(window.scrollY);
-      // console.log(window.innerHeight);
-      console.log(footerNav.offsetTop);
-    } else {
-      snsNav.classList.remove('visible');
     }
 
     // スクロール量を取得
@@ -34,12 +24,12 @@ window.addEventListener('scroll', function() {
       // sectionまでの高さを取得
       const distanceToSection = section.offsetTop;
       // 下記条件が成り立つときだけsectionにis-activeクラスを付与する
-      if(scroll + windowHeight > distanceToSection) {
+      if(scroll + windowHeight > distanceToSection + 100) {
         section.classList.add('fade-in');
       }
     });
-
 });
+
 // モーダルの閉じるボタン位置調整
 function setCloseButtonLeft(closeButtonStyle) {
   if (window.innerWidth <= 640) {
@@ -102,20 +92,16 @@ function clickMoreButton(more,content,moreArea,transform) {
     }
   })
 }
-window.onload = function () {
-  // const video = document.getElementById('movie-intro-video');
-  // const movieArea = document.getElementById('movie-intro')
-
-  // video.addEventListener('ended', () => {
-  //   movieArea.style.opacity = '0';
-  // });
-  // コピーライト年設定
+// コピーライト年設定
+function setCopyRight() {
   const currentDateElement = document.getElementById('current-date');
   const today = new Date(); // 現在の年月日を取得
   const formattedYear = today.getFullYear(); // 年のみを取得
   currentDateElement.textContent = formattedYear;
+}
 
-  // splide処理
+// splide処理
+function setSplide() {
   new Splide(".splide", {
     type: "loop", // ループあり
     arrows: true, // 矢印非表示
@@ -129,6 +115,48 @@ window.onload = function () {
       },
     },
   }).mount();
+}
+
+// MoreButton設定処理
+function setMoreButton() {
+  if (window.innerWidth <= 640) {
+    clickMoreButton('news-more','news-content','news-more-area', 'translate(-50%, -120px')
+    clickMoreButton('live-more','live-content','live-more-area', 'translate(-50%, -150px')
+  } else {
+    clickMoreButton('news-more','news-content','news-more-area', 'translate(-50%, -140px')
+    clickMoreButton('live-more','live-content','live-more-area', 'translate(-50%, -170px')
+  }
+}
+
+function setScrollEventProc(target, trigger, className) {
+  const targetProc = document.querySelector(target); // 対象の要素のIDを指定
+  const triggerProc = document.getElementById(trigger);
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        targetProc.classList.add(className);
+      } else {
+        targetProc.classList.remove(className)
+      }
+    })
+  })
+
+  observer.observe(triggerProc)
+}
+
+function setScrollEvent() {
+  setScrollEventProc('.sns-nav', 'footer-nav', 'visible')
+}
+
+window.onload = function () {
+  // const video = document.getElementById('movie-intro-video');
+  // const movieArea = document.getElementById('movie-intro')
+
+  // video.addEventListener('ended', () => {
+  //   movieArea.style.opacity = '0';
+  // });
+
 
   const flyerImages = document.querySelectorAll('.flyer-image');
   const overlay = document.getElementById('overlay');
@@ -153,11 +181,10 @@ window.onload = function () {
       });
     });
   });
-  if (window.innerWidth <= 640) {
-    clickMoreButton('news-more','news-content','news-more-area', 'translate(-50%, -120px')
-    clickMoreButton('live-more','live-content','live-more-area', 'translate(-50%, -150px')
-  } else {
-    clickMoreButton('news-more','news-content','news-more-area', 'translate(-50%, -140px')
-    clickMoreButton('live-more','live-content','live-more-area', 'translate(-50%, -170px')
-  }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  setCopyRight();
+  setSplide();
+  setMoreButton();
+  setScrollEvent();
+})
