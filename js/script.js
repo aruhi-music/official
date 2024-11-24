@@ -1,11 +1,15 @@
 window.addEventListener('scroll', function() {
     const header = document.querySelector('.page-header'); // 対象の要素のIDを指定
     const profile = document.getElementById('profile-section');
+
+    const pageTop = document.querySelector('.page-top');
   
     if (window.pageYOffset === 0) {
       header.classList.add('no-scroll'); // クラスを追加
+      pageTop.classList.remove('show'); // クラスを追加
     } else {
       header.classList.remove('no-scroll'); // クラスを削除
+      pageTop.classList.add('show'); // クラスを削除
     }
     if (window.scrollY >= profile.offsetTop) {
       header.classList.add('mixBlendMode-off');
@@ -149,6 +153,13 @@ function setScrollEvent() {
   setScrollEventProc('.sns-nav', 'footer-nav', 'visible')
 }
 
+function setPageTopButton() {
+  const pageTop = document.querySelector('.page-top');
+  pageTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズにトップへスクロール
+  });
+}
+
 window.onload = function () {
   // const video = document.getElementById('movie-intro-video');
   // const movieArea = document.getElementById('movie-intro')
@@ -187,4 +198,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setSplide();
   setMoreButton();
   setScrollEvent();
+  setPageTopButton();
 })
