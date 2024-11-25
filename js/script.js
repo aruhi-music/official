@@ -179,24 +179,20 @@ window.onload = function () {
   const flyerImages = document.querySelectorAll('.flyer-image');
   const overlay = document.getElementById('overlay');
 
+  const closeBtn = document.querySelector('.close');
+
+  closeBtn.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    overlay.removeChild(closeButton);
+    overlay.removeChild(overlay.querySelector('img'));
+  });
+
   flyerImages.forEach(image => {
     image.addEventListener('click', () => {
       overlay.style.display = 'block';
       imageOverlay = image.cloneNode()
       imageOverlay.classList.add('flyer-image-proc');
       overlay.appendChild(imageOverlay);
-
-      const closeButton = document.createElement('span');
-      closeButton.classList.add('close');
-      overlay.appendChild(closeButton);
-
-      setCloseButtonLeft(closeButton.style);
-
-      closeButton.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        overlay.removeChild(closeButton);
-        overlay.removeChild(overlay.querySelector('img'));
-      });
     });
   });
 }
