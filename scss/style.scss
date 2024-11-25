@@ -11,6 +11,9 @@ html {
         font-size: 12px;
     }
 }
+body {
+    isolation: isolate;
+}
 h2 {
     font-size: 3rem;
     font-weight: normal;
@@ -120,7 +123,7 @@ section {
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    height: 120px;
+    height: 100px;
     padding: 0 1%;
     background-color: rgb(1, 52, 79, 0.4);
     -webkit-backdrop-filter: blur(12px);
@@ -136,8 +139,8 @@ section {
         height: 70px;
     }
     img {
-        width: 140px;
-        height: 96px;
+        width: 120px;
+        height: 82px;
         transition: all 0.3s ease-in-out;
         @include sp {
             width: 81px;
