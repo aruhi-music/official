@@ -16,22 +16,6 @@ window.addEventListener('scroll', function() {
     } else {
       header.classList.remove('mixBlendMode-off');
     }
-
-    // スクロール量を取得
-    const scroll = window.scrollY;
-    // 画面の高さを取得
-    const windowHeight = window.innerHeight;
-    // すべての.boxを取得 → すべてのsectionを取得に変更
-    const sections = document.querySelectorAll('section');
-
-    sections.forEach(function(section) {
-      // sectionまでの高さを取得
-      const distanceToSection = section.offsetTop;
-      // 下記条件が成り立つときだけsectionにis-activeクラスを付与する
-      if(scroll + windowHeight > distanceToSection + 100) {
-        section.classList.add('fade-in');
-      }
-    });
 });
 
 // モーダルの閉じるボタン位置調整
@@ -160,6 +144,29 @@ function setPageTopButton() {
   });
 }
 
+function fadeInSection() {
+  const options = {
+    root: null,
+    rootMargin: '-200px 0px 0px 0px', // ビューポートの上端から200px上の位置で監視開始
+    threshold: 0
+  };
+  
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+      }
+    });
+  }, options);
+  
+  // 監視対象の要素を取得 (例: 全てのsection要素)
+  const sections = document.querySelectorAll('section');
+  
+  sections.forEach(section => {
+    observer.observe(section);
+  });
+}
+
 window.onload = function () {
   // const video = document.getElementById('movie-intro-video');
   // const movieArea = document.getElementById('movie-intro')
@@ -199,4 +206,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setMoreButton();
   setScrollEvent();
   setPageTopButton();
+  fadeInSection();
 })
