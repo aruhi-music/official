@@ -183,7 +183,7 @@ window.onload = function () {
 
   closeBtn.addEventListener('click', () => {
     overlay.style.display = 'none';
-    overlay.removeChild(closeButton);
+    overlay.removeChild(closeBtn);
     overlay.removeChild(overlay.querySelector('img'));
   });
 

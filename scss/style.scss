@@ -90,13 +90,17 @@ section {
     .close {
         display: block;
         position: relative;
-        top: 90dvh;
+        top: 5%;
+        left: calc(100% - 200px);
+        transform: translateX(0);
         width: 150px;
         height: 40px;
         border-radius: 50%;
         cursor: pointer;
         @include sp {
-            left: calc(80% + 30px);
+            top: 90dvh;
+            left: 50%;
+            transform: translateX(-50%);
         }
         &::before, &::after {
             content: "";
@@ -129,8 +133,8 @@ section {
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     transform: translate3d(0,0,0);
-    -webkit-mix-blend-mode: color-dodge;
-    mix-blend-mode: color-dodge;
+    -webkit-mix-blend-mode: normal;
+    mix-blend-mode: normal;
     transition: all 0.3s ease-in-out;
     z-index: 10;
     isolation: isolate;
