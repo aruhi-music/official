@@ -168,12 +168,12 @@ function fadeInSection() {
 }
 
 window.onload = function () {
-  // const video = document.getElementById('movie-intro-video');
-  // const movieArea = document.getElementById('movie-intro')
+  const video = document.getElementById('movie-intro-video');
+  const movieArea = document.getElementById('movie-intro')
 
-  // video.addEventListener('ended', () => {
-  //   movieArea.style.opacity = '0';
-  // });
+  video.addEventListener('ended', () => {
+    movieArea.style.opacity = '0';
+  });
 
 
   const flyerImages = document.querySelectorAll('.flyer-image');
