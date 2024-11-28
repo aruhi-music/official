@@ -169,6 +169,7 @@ function fadeInSection() {
 
 window.onload = function () {
   const video = document.getElementById('movie-intro-video');
+  video.play();
   const movieArea = document.getElementById('movie-intro')
 
   video.addEventListener('ended', () => {
