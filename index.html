@@ -23,56 +23,53 @@
 	<script type="application/ld+json">
 		{
 			"@context": "http://schema.org",
-			"@type": "MusicGroup",
-			"name": "或陽",
-			"url": "https://aruhi-music.github.io/official/",
-			"image": "https://aruhi-music.github.io/official/img/img_main_phone.jpg",
-			"genre": "ロック",
-			"aggregateRating": {
-				"@type": "AggregateRating",
-				"itemReviewed": [
-					{
-						"@type": "MusicVideoObject",
-						"name": "友達以上恋人未満",
-						"description": "1st mini album「生死」より 友達以上恋人未満 のミュージックビデオを公開。",
-						"thumbnail": "https://i.ytimg.com/vi/989GNJ54CNo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCsKIhrANtpsIAll-by-_Ds_X2aw",
-						"uploadDate": "2023-08-14",
-						"embedUrl": "https://www.youtube.com/watch?v=989GNJ54CNo"
-					},
-					{
-						"@type": "MusicVideoObject",
-						"name": "Thief",
-						"description": "1st album「是是是と非非非」より Thief のミュージックビデオを公開。",
-						"thumbnail": "https://i.ytimg.com/vi/zM8-9SrD4lQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWv6byaX5DXdL8imSAhBjj9PZI3Q",
-						"uploadDate": "2024-09-19",
-						"embedUrl": "https://www.youtube.com/watch?v=zM8-9SrD4lQ"
-					},
-					{
-						"@type": "MusicVideoObject",
-						"name": "経",
-						"description": "デジタルシングル「経」 のミュージックビデオを公開。",
-						"thumbnail": "https://i.ytimg.com/vi/3tNm8cWloIM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2IkHJD7zHoGoGVCJC28Is5Ge4ag",
-						"uploadDate": "2023-08-15",
-						"embedUrl": "https://www.youtube.com/watch?v=3tNm8cWloIM"
-					},
-					{
-						"@type": "MusicVideoObject",
-						"name": "正義",
-						"description": "或陽(ARUHI) - 正義 「Music Video」",
-						"thumbnail": "https://i.ytimg.com/vi/pr7LLXNZ9xs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCT7oy18SbHu2Q21EAeSPgP7beV8g",
-						"uploadDate": "2021-09-06",
-						"embedUrl": "https://www.youtube.com/watch?v=pr7LLXNZ9xs"
-					},
-					{
-						"@type": "MusicVideoObject",
-						"name": "生き様と死に様",
-						"description": "1st mini album「生死」より 生き様と死に様 のミュージックビデオを公開。",
-						"thumbnail": "https://i.ytimg.com/vi/efDNhssn83o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA1seDFueTKfA1t_VX8SZCDkP4ePw",
-						"uploadDate": "2024-06-30",
-						"embedUrl": "https://www.youtube.com/watch?v=efDNhssn83o"
-					}
-				]
-			}
+			"@graph": [
+				{
+					"@type": "MusicVideoObject",
+					"name": "友達以上恋人未満",
+					"description": "1st mini album「生死」より 友達以上恋人未満 のミュージックビデオを公開。",
+					"thumbnail": "https://i.ytimg.com/vi/989GNJ54CNo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBCsKIhrANtpsIAll-by-_Ds_X2aw",
+					"uploadDate": "2023-08-14",
+					"url": "https://www.youtube.com/watch?v=989GNJ54CNo",
+					"embedUrl": "https://www.youtube.com/watch?v=989GNJ54CNo"
+				},
+				{
+					"@type": "MusicVideoObject",
+					"name": "Thief",
+					"description": "1st album「是是是と非非非」より Thief のミュージックビデオを公開。",
+					"thumbnail": "https://i.ytimg.com/vi/zM8-9SrD4lQ/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDWv6byaX5DXdL8imSAhBjj9PZI3Q",
+					"uploadDate": "2024-09-19",
+					"url": "https://www.youtube.com/watch?v=zM8-9SrD4lQ",
+					"embedUrl": "https://www.youtube.com/watch?v=zM8-9SrD4lQ"
+				},
+				{
+					"@type": "MusicVideoObject",
+					"name": "経",
+					"description": "デジタルシングル「経」 のミュージックビデオを公開。",
+					"thumbnail": "https://i.ytimg.com/vi/3tNm8cWloIM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2IkHJD7zHoGoGVCJC28Is5Ge4ag",
+					"uploadDate": "2023-08-15",
+					"url": "https://www.youtube.com/watch?v=3tNm8cWloIM",
+					"embedUrl": "https://www.youtube.com/watch?v=3tNm8cWloIM"
+				},
+				{
+					"@type": "MusicVideoObject",
+					"name": "正義",
+					"description": "或陽(ARUHI) - 正義 「Music Video」",
+					"thumbnail": "https://i.ytimg.com/vi/pr7LLXNZ9xs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCT7oy18SbHu2Q21EAeSPgP7beV8g",
+					"uploadDate": "2021-09-06",
+					"url": "https://www.youtube.com/watch?v=pr7LLXNZ9xs",
+					"embedUrl": "https://www.youtube.com/watch?v=pr7LLXNZ9xs"
+				},
+				{
+					"@type": "MusicVideoObject",
+					"name": "生き様と死に様",
+					"description": "1st mini album「生死」より 生き様と死に様 のミュージックビデオを公開。",
+					"thumbnail": "https://i.ytimg.com/vi/efDNhssn83o/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA1seDFueTKfA1t_VX8SZCDkP4ePw",
+					"uploadDate": "2024-06-30",
+					"url": "https://www.youtube.com/watch?v=efDNhssn83o",
+					"embedUrl": "https://www.youtube.com/watch?v=efDNhssn83o"
+				}
+			]
 		}
 	</script>
 	<script type="application/ld+json">
@@ -141,6 +138,7 @@
 				<source src="img/movie_intro.webm" type="video/webm">
 				Your browser does not support the video tag.
 			</video>
+			<span class="close"></span>
 		</div>
 		<!-- 画像クリック時拡大表示用 -->
 		<div id="overlay" class="hidden">
