@@ -135,6 +135,7 @@ function setScrollEventProc(target, trigger, className) {
 
 function setScrollEvent() {
   setScrollEventProc('.sns-nav', 'footer-nav', 'visible')
+  setScrollEventProc('.page-top', 'footer-nav', 'visible')
 }
 
 function setPageTopButton() {
@@ -142,12 +143,16 @@ function setPageTopButton() {
   pageTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズにトップへスクロール
   });
+  const pageTopBottom = document.querySelector('.page-top--bottom');
+  pageTopBottom.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // スムーズにトップへスクロール
+  });
 }
 
 function fadeInSection() {
   const options = {
     root: null,
-    rootMargin: '-200px 0px 0px 0px', // ビューポートの上端から200px上の位置で監視開始
+    rootMargin: '-300px 0px 0px 0px', // ビューポートの上端から200px上の位置で監視開始
     threshold: 0
   };
   
@@ -166,17 +171,25 @@ function fadeInSection() {
     observer.observe(section);
   });
 }
+function setIntroVideo() {
+  const closeBtn = document.querySelector('.close-movie');
+  const videoArea = document.getElementById('movie-intro');
 
-window.onload = function () {
+  closeBtn.addEventListener('click', () => {
+    videoArea.style.opacity = '0';
+    movieArea.style.pointerEvents = 'none';
+  });
+
   const video = document.getElementById('movie-intro-video');
   video.play();
   const movieArea = document.getElementById('movie-intro')
 
   video.addEventListener('ended', () => {
     movieArea.style.opacity = '0';
+    movieArea.style.pointerEvents = 'none';
   });
-
-
+}
+function setFlyerEvent() {
   const flyerImages = document.querySelectorAll('.flyer-image');
   const overlay = document.getElementById('overlay');
 
@@ -184,7 +197,6 @@ window.onload = function () {
 
   closeBtn.addEventListener('click', () => {
     overlay.style.display = 'none';
-    overlay.removeChild(closeBtn);
     overlay.removeChild(overlay.querySelector('img'));
   });
 
@@ -196,8 +208,16 @@ window.onload = function () {
       overlay.appendChild(imageOverlay);
     });
   });
+  console.log('comp')
+}
+function onLoadEvent() {
+  window.onload = function () {
+    setFlyerEvent();
+  }
 }
 document.addEventListener('DOMContentLoaded', () => {
+  setIntroVideo();
+  onLoadEvent();
   setCopyRight();
   setSplide();
   setMoreButton();

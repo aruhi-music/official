@@ -132,13 +132,13 @@
     </header>
 	<main>
 		<!-- 自動再生動画 -->
-		<div id="movie-intro" style="transition: all 0.3s ease-in-out; pointer-events: none;">
+		<div id="movie-intro">
 			<video autoplay muted playsinline id="movie-intro-video">
 				<source src="img/movie_intro.mp4" type="video/mp4">
 				<source src="img/movie_intro.webm" type="video/webm">
 				Your browser does not support the video tag.
 			</video>
-			<span class="close"></span>
+			<span class="close-movie"></span>
 		</div>
 		<!-- 画像クリック時拡大表示用 -->
 		<div id="overlay" class="hidden">
@@ -898,6 +898,7 @@
 			</ul>
 			<p class="footer__copy">©︎ <span id="current-date"></span> ARUHI</p>
 		</div>
+		<a href="#" class="page-top--bottom is-sp">TOPへ戻る</a>
     </footer>
     <script src="js/script.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
