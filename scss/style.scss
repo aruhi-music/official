@@ -198,8 +198,21 @@ section {
 .main-img {
     max-width: 1900px;
     margin: 0 auto 120px;
+    position: relative;
     @include sp {
         margin: 0 auto 42px;
+    }
+    h1 {
+        position: absolute;
+        bottom: -10px;
+        font-size: 10vw;
+        color: #4280a1;
+        mix-blend-mode: difference;
+        left: 10px;
+        @include sp {
+            bottom: 0;
+            left: 4px;
+        }
     }
     &__dummy-image img {
         width: 100%;
