@@ -447,10 +447,11 @@ section {
     }
     .splide__slide {
         text-align: center;
-        iframe {
+        lite-youtube {
             width: 80%;
             height: auto;
             aspect-ratio: 16 / 9;
+            margin: 0 auto;
             z-index: 1;
             @include sp {
                 width: 85%;
