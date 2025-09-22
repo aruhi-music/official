@@ -630,7 +630,8 @@ section {
     }
     &>div {
         display: grid;
-        gap: 16px;
+        column-gap: 16px;
+        row-gap: 32px;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         @include sp {
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -647,7 +648,7 @@ section {
         }
     }
     img {
-        margin-bottom: 20px;
+        margin-bottom: 4px;
         @include sp {
             margin-bottom: 12px;
         }
@@ -661,12 +662,12 @@ section {
     }
     &__text {
         font-size: 1.4rem;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
         min-height: 72px;
         @include sp {
             font-size: 1.1rem;
             min-height: 39px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
     }
     button {
